@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+   <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script defer type="text/babel">
+
+      function Temperature ({ t }) {
+        const textColor = t < 0 ? 'blue' : 'red';
+        const style = {
+          color: textColor,
+          fontSize: '25px',
+          fontWeight: 100,
+        };
+
+        return (
+          <div style={style}>
+            {t}
+          </div>
+        );
+      }
+      ReactDOM.render(<Temperature t={-120} />, document.getElementById('root'));
+
+      </script>
+  </body>
+</html>
